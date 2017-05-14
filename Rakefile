@@ -3,7 +3,7 @@ require 'pp'
 
 task :download_json do
   10.times do |i|
-    url = "https://www.rijksmuseum.nl/api/nl/collection?key=#{ENV["API_KEY"]}&format=json&imgonly=true&ps=100&p=#{i + 1}"
+    url = "https://www.rijksmuseum.nl/api/nl/collection?key=#{ENV["API_KEY"]}&format=json&imgonly=true&ps=100&p=#{i + 1}&q=portet"
     json = HTTP.get(url)
     File.write("pages/page-#{i+1}.json", json)
   end
