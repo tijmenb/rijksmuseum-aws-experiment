@@ -4,4 +4,6 @@ require 'json'
 # image_url
 objects = JSON.parse(File.read("combined.json"))
 
-objects
+objects.each do |o|
+  `curl #{o["image_url"]} > images/#{o["object_number"]}.jpg`
+end
