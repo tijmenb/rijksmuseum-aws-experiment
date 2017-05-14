@@ -5,5 +5,5 @@ require 'json'
 objects = JSON.parse(File.read("combined.json"))
 
 objects.each do |o|
-  `curl #{o["image_url"]} > images/#{o["object_number"]}.jpg`
+  `curl "#{o["image_url"]}" > "images/#{o["object_number"]}.jpg"`
 end
